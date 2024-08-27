@@ -1,0 +1,217 @@
+/* General body styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #0d0d0d, #333333);
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container for the game elements */
+.container {
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgba(30, 30, 30, 0.95);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+    width: 90%;
+    max-width: 350px;
+    transition: all 0.3s ease;
+}
+
+/* Title styling */
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #ff4081;
+}
+
+/* Styling for the player input section */
+.player-entry {
+    margin-bottom: 20px;
+}
+
+.player-entry input {
+    padding: 10px;
+    margin: 10px 0;
+    width: 80%;
+    max-width: 180px;
+    border: none;
+    border-radius: 5px;
+    background-color: #444444;
+    color: #ffffff;
+    font-size: 1em;
+}
+
+/* Buttons for starting and ending the game */
+.player-entry button {
+    padding: 10px 20px;
+    margin: 10px 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff4081;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.player-entry button:hover {
+    background-color: #e53981;
+}
+
+/* Styling for the game board */
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 20px 0;
+    width: 100%;
+}
+
+.cell {
+    width: 100%;
+    padding-top: 100%; /* Keeps the cell square */
+    position: relative;
+    background-color: #444444;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+    border-radius: 5px;
+    color: #ff4081;
+    cursor: pointer;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.status-message {
+    margin: 20px 0;
+    font-size: 1.5em;
+    color: #ff4081;
+}
+
+.scores {
+    margin-top: 20px;
+    font-size: 1.2em;
+}
+
+.scores p {
+    margin: 5px 0;
+}
+
+#player1Score, #player2Score {
+    font-weight: bold;
+}
+
+/* Styling for the result screen */
+.result-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #ff4081;
+    transition: opacity 0.5s ease-in-out;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.result-screen.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+#resultMessage {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#newGameButton {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff4081;
+    color: #ffffff;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+#newGameButton:hover {
+    background-color: #e53981;
+}
+
+/* Media Queries for responsiveness */
+
+/* Tablets (portrait and landscape) */
+@media (min-width: 600px) and (max-width: 899px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    .player-entry input, .player-entry button {
+        width: 90%;
+    }
+
+    .cell {
+        font-size: 2.5em;
+    }
+
+    .status-message {
+        font-size: 1.2em;
+    }
+
+    .scores {
+        font-size: 1em;
+    }
+
+    #resultMessage {
+        font-size: 2em;
+    }
+
+    #newGameButton {
+        font-size: 1em;
+        padding: 12px 24px;
+    }
+}
+
+/* Mobile devices (portrait) */
+@media (max-width: 599px) {
+    h1 {
+        font-size: 1.8em;
+    }
+
+    .player-entry input, .player-entry button {
+        width: 100%;
+        max-width: none;
+    }
+
+    .cell {
+        font-size: 2em;
+    }
+
+    .status-message {
+        font-size: 1em;
+    }
+
+    .scores {
+        font-size: 0.9em;
+    }
+
+    #resultMessage {
+        font-size: 1.8em;
+    }
+
+    #newGameButton {
+        font-size: 1em;
+        padding: 10px 20px;
+    }
+}
